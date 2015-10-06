@@ -65,19 +65,19 @@ public class Cismap3DCanvas implements BasicGuiComponentProvider {
 
         panel = new JPanel();
 
-//        final Runnable r = new Runnable() {
-//
-//                @Override
-//                public void run() {
-//        init();
-//                }
-//            };
-//
-//        if (EventQueue.isDispatchThread()) {
-//            r.run();
-//        } else {
-//            EventQueue.invokeLater(r);
-//        }
+        final Runnable r = new Runnable() {
+
+                @Override
+                public void run() {
+                    init();
+                }
+            };
+
+        if (EventQueue.isDispatchThread()) {
+            r.run();
+        } else {
+            EventQueue.invokeLater(r);
+        }
     }
 
     //~ Methods ----------------------------------------------------------------
@@ -102,7 +102,15 @@ public class Cismap3DCanvas implements BasicGuiComponentProvider {
 
                 @Override
                 public void componentResized(final ComponentEvent e) {
-                    System.out.println("resized");
+                    final AppSettings settings = new AppSettings(true);
+                    System.out.println("w=" + e.getComponent().getWidth() + "|h=" + e.getComponent().getHeight());
+                    settings.setWidth(e.getComponent().getWidth());
+                    settings.setHeight(e.getComponent().getHeight());
+                    sw.setSettings(settings);
+                    final Dimension d = new Dimension(e.getComponent().getWidth(), e.getComponent().getHeight());
+                    ctx.getCanvas().setPreferredSize(d);
+                    ctx.getCanvas().setSize(d);
+                    ctx.getCanvas().repaint();
                 }
 
                 @Override
@@ -180,8 +188,7 @@ public class Cismap3DCanvas implements BasicGuiComponentProvider {
                     frame.setPreferredSize(new Dimension(1024, 768));
                     frame.setLayout(new BorderLayout());
                     final Cismap3DCanvas c = new Cismap3DCanvas();
-                    c.init();
-                    frame.add(c.getComponent());
+                    frame.add(c.getComponent(), BorderLayout.CENTER);
                     frame.pack();
                     frame.setVisible(true);
                     frame.toFront();
