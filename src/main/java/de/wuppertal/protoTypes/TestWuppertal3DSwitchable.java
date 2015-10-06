@@ -98,10 +98,13 @@ public class TestWuppertal3DSwitchable extends SimpleApplication implements Acti
         inputManager.addListener(this, "g");
         assetManager = new DesktopAssetManager(true);
         // assetManager.registerLocator("C:\\Temp\\ddddaten\\sky", FileLocator.class);
-        assetManager.registerLocator("\\\\s102x003\\Wuppertal3D$\\sky", FileLocator.class);
+        assetManager.registerLocator(
+            "/Users/mscholl/projects/Wupp/SUDPLAN-GeoCPM-WuNDa/datenWuppertal3D/sky",
+            FileLocator.class);
 
         // Globale Fluggeschwindigkeit
         flyCam.setMoveSpeed(1000);
+        flyCam.setDragToRotate(true);
         // Globale Sichtdistanz
         cam.setFrustumFar(30000);
         sky = new DynamicSky(assetManager, viewPort, rootNode, cam.getFrustumFar() * 0.9f);

@@ -42,14 +42,14 @@ public class Wuppertal3D {
 
     private static final int iNumberOfGeometryLoadingThreads = 2;
     private static final int iNumberOfTextureLoadingThreads = 2;
-    private static final long lControlThreadSleepTime = 200;                               // 250 => max 4 runs per
-                                                                                           // second.
-    private static final long lTexturesThreadSleepTime = 250;                              // 100 => max 10 runs per
-                                                                                           // second.
-    private static final long lGeometryThreadSleepTime = 250;                              // 100 => max 10 runs per
-                                                                                           // second.
-    private static final double[] camMoveDistanceThresholds = new double[] { 30, 100 };    // <[0] => Standing  ;  <[1]
-                                                                                           // => Moving ; else Beaming
+    private static final long lControlThreadSleepTime = 200;                            // 250 => max 4 runs per
+                                                                                        // second.
+    private static final long lTexturesThreadSleepTime = 250;                           // 100 => max 10 runs per
+                                                                                        // second.
+    private static final long lGeometryThreadSleepTime = 250;                           // 100 => max 10 runs per
+                                                                                        // second.
+    private static final double[] camMoveDistanceThresholds = new double[] { 30, 100 }; // <[0] => Standing  ;  <[1]
+                                                                                        // => Moving ; else Beaming
 
     /** settings for region terrain creationMode.* */
     private static final String wmsExampleQueryRegion =
@@ -59,7 +59,8 @@ public class Wuppertal3D {
     private static final File srcFolderGeometryRegion = new File("C:\\Temp\\ddddaten\\rohdaten");
     /** settings for region terrain liveMode and creationMode.* */
     // private final static File dstFolderRegion =  new File ("C:\\Temp\\ddddaten\\terrain_region");
-    private static final File dstFolderRegion = new File("\\\\s102x003\\Wuppertal3D$\\terrain_region");
+    private static final File dstFolderRegion = new File(
+            "/Users/mscholl/projects/Wupp/SUDPLAN-GeoCPM-WuNDa/datenWuppertal3D/terrain_region");
     private static final float yoffsetRegion = -10;
 
     /** settings for static terrain creationMode.* */
@@ -70,7 +71,8 @@ public class Wuppertal3D {
     private static final File srcFolderGeometryStatic = new File("C:\\Temp\\ddddaten\\rohdaten");
     /** settings for static terrain liveMode and creationMode.* */
     // private final static File dstFolderStatic =  new File ("C:\\Temp\\ddddaten\\terrain_static");
-    private static final File dstFolderStatic = new File("\\\\s102x003\\Wuppertal3D$\\terrain_static");
+    private static final File dstFolderStatic = new File(
+            "/Users/mscholl/projects/Wupp/SUDPLAN-GeoCPM-WuNDa/datenWuppertal3D/terrain_static");
     private static final float yoffsetStatic = -10;
 
     /** settings for patched terrain creationMode.* */
@@ -82,7 +84,8 @@ public class Wuppertal3D {
     private static final int iTextureResolutionLow = 128;       // ,128};
     private static final int iTextureResolutionHigh = 2048;     // ,128};
     // private final static File dstFolderPatched =  new File ("C:\\Temp\\ddddaten\\terrain_patched");
-    private static final File dstFolderPatched = new File("\\\\s102x003\\Wuppertal3D$\\terrain_patched");
+    private static final File dstFolderPatched = new File(
+            "/Users/mscholl/projects/Wupp/SUDPLAN-GeoCPM-WuNDa/datenWuppertal3D/terrain_patched");
     private static final Coord offsetPatchedterrain = new Coord(361400.0, 5686600, 0);
     private static final float yoffsetPatched = 0;
 
@@ -90,7 +93,8 @@ public class Wuppertal3D {
     private static final File srcFolderGeometryBuildings = new File("C:\\Temp\\ddddaten\\rohdaten\\citygml");
     /** settings for buildings liveMode and creationMode.* */
     private static final int iPatchSizeBuildings = 1000;
-    private static final File dstFolderGeometryBuildings = new File("\\\\s102x003\\Wuppertal3D$\\buildings");
+    private static final File dstFolderGeometryBuildings = new File(
+            "/Users/mscholl/projects/Wupp/SUDPLAN-GeoCPM-WuNDa/datenWuppertal3D/buildings");
     private static final Coord offsetPatchedBuildings = new Coord(361395.0, 5686617.94, 0);
 
     //~ Enums ------------------------------------------------------------------
